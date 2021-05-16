@@ -2,7 +2,7 @@
 
 <div class="home">
   <div class="home__container">
-    <section class="home__introduction">
+    <section class="home__introduction is-flex-space-between">
 
       <div class="home__introduction__information">
         <h3 class="home__introduction__information__greetings">
@@ -29,21 +29,23 @@
 
     </section>
 
-    <section class="home__details">
+    <section class="home__details is-flex">
       <figure class="home__details__media">
-        <img src={{homeData.hero_image.url}} alt={{homeData.hero_image.alt}} class="home__details__media">
+        <img src={{homeData.hero_image.url}} alt={{homeData.hero_image.alt}} class="home__details__media_image">
       </figure>
 
-      <div class="home__details__information">
-        <h1 class="home__details__information__label">{{homeData.label}}</h1>
+      <div class="home__details__information pt-7 pl-7">
+        <h1 class="home__details__information__label mb-4">{{homeData.label}}</h1>
         <h4 class="home__details__information__description">{{homeData.description}}</h4>
       </div>
     </section>
 
     <div class="home__background">
-      {{#each homeData.backgroundtext as |text key|}}
+      {{!-- {{#each homeData.backgroundtext as |text key|}}
         <h1 class="home__background__text">{{text.text}}</h1>
-      {{/each}}
+      {{/each}} --}}
+
+      <h1 class="home__background__text">Design</h1>
     </div>
   </div>
 </div>

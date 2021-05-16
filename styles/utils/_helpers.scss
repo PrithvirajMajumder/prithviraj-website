@@ -9,6 +9,7 @@ $margins: (
   4: 1rem,
   5: 1.5rem,
   6: 3rem,
+  7: 6rem,
 );
 
 $paddings: (
@@ -19,6 +20,7 @@ $paddings: (
   4: 1rem,
   5: 1.5rem,
   6: 3rem,
+  7: 6rem,
 );
 
 @each $level, $value in $paddings {

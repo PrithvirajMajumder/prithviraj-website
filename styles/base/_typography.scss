@@ -5,7 +5,7 @@
 
 * {
   font-family: var(--font-family);
-  color: var(--has-color-dark-medium);
+  color: var(--has-color-dark-high);
 }
 
 a {
@@ -38,9 +38,7 @@ h5,
 h6,
 p,
 a {
-  margin-top: 16px;
-  margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 113%;
 }
 
