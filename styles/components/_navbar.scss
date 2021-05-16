@@ -1,0 +1,39 @@
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar__title {
+
+}
+
+.navbar__title__link {
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.navbar__contact__phone__link {
+  font-size: var(--font-size-7);
+  font-weight: var(--font-weight-semi-bold);
+  margin: 0 0.75rem;
+}
+
+.navbar__contact__email__link {
+  font-size: var(--font-size-7);
+  font-weight: var(--font-weight-semi-bold);
+  margin: 0 0.75rem;
+}
+
+
+.navbar__lists {
+
+}
+
+.navbar__list {
+
+}
+
+.navbar__list__link {
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-semi-bold);
+  margin: 0 1rem;
+}

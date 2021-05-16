@@ -5,6 +5,7 @@
 
 * {
   font-family: var(--font-family);
+  color: var(--has-color-dark-medium);
 }
 
 a {
@@ -25,8 +26,8 @@ $font-sizes: (
 $font-weights: (
   light: 300,
   normal: 400,
-  semi-bold: 600,
-  bold: 700,
+  semi-bold: 700,
+  bold: 900,
 );
 
 h1,
