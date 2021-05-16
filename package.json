@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "backend:build": "node app.js",
-    "backend:dev": "nodemon app.js",
+    "backend:build": "node server.js",
+    "backend:dev": "nodemon server.js",
     "frontend:build": "webpack --progress --config webpack.config.build.js",
     "frontend:dev": "webpack serve --progress --config webpack.config.development.js",
     "start": "concurrently --kill-others \"npm run backend:dev\" \"npm run frontend:dev\""
@@ -61,12 +61,12 @@
     "dotenv": "^9.0.2",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
     "logger": "0.0.1",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
-    "prismic-dom": "^2.2.5",
-    "pug": "^3.0.2"
+    "prismic-dom": "^2.2.5"
   },
   "homepage": "https://github.com/PrithvirajMajumder/prithviraj-website#readme"
 }
