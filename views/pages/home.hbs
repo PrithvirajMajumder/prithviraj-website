@@ -1,21 +1,49 @@
 {{> navbar}}
 
-<div class="posts">
-    <div class="row justify-content-center">
-        <div class="col-lg-7" style="margin-top: 50px;">
-            <div class="card">
+<div class="home">
+  <div class="home__container">
+    <section class="home__introduction">
 
-                <img src="https://picsum.photos/500/500"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Posted by Janith Kasun</h5>
+      <div class="home__introduction__information">
+        <h3 class="home__introduction__information__greetings">
+          {{homeData.grettings}}
+        </h3>
+        <h1 class="home__introduction__information__title">
+          {{homeData.title}}
+        </h1>
+      </div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item">This is supposed to be a comment</li>
-                        <li class="list-group-item">This is supposed to be a comment</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      <div class="home__introduction__social">
+        <ul class="home__introduction__social__links">
+          {{#each homeData.social as |social key|}}
+            <li class="home__introduction__social__link">
+              <a href={{social.link}}>
+                <figure class="home__introduction__social__media">
+                  <img class="home__introduction__social__media__image" src={{social.icon.url}} alt={{social.icon.alt}}>
+                </figure>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="home__details">
+      <figure class="home__details__media">
+        <img src="" alt="Prithviraj's Emoji" class="home__details__media">
+      </figure>
+
+      <div class="home__details__information">
+        <h1 class="home__details__information__label">{{homeData.label}}</h1>
+        <h4 class="home__details__information__description">{{homeData.description}}</h4>
+      </div>
+    </section>
+
+    <div class="home__background">
+      {{#each homeData.backgroundtext as |text key|}}
+        <h1 class="home__background__text">{{text.text}}</h1>
+      {{/each}}
     </div>
+  </div>
 </div>

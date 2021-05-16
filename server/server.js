@@ -18,6 +18,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+// SETTING PRISMIC
+const initApi = (req) => Prismic.getApi(process.env.PRISMIC_ENDPOINT, {
+  accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+  req,
+});
+// const handleLinkResolver = (doc) => {
+//   return '/';
+// }
+app.use((req, res, next) => {
+  res.locals.ctx = {
+    endpoint: process.env.PRISMIC_ENDPOINT,
+    handleLinkResolver: () => '/',
+  };
+  res.locals.PrismicDOM = PrismicDOM;
+  next();
+});
+// ENDING SETTING PRISMIC
+
+
+
+
 //SETTING VIEWS OF HANDLEBARS
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
@@ -26,24 +49,29 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs');
 
 
-//HOME PAGES ROUTE
+//PAGES ROUTE
 app.get('/', async (req, res) => {
-    res.render('pages/home', {
+  const api = await initApi(req);
+  const home = await api.getSingle('home');
+  console.log(home.data);
+
+  res.render('pages/home', {
+    homeData: home.data,
   });
 });
 
 app.get('/designs', async (req, res) => {
-    res.render('pages/designs', {
+  res.render('pages/designs', {
   });
 });
 
 app.get('/projects', async (req, res) => {
-    res.render('pages/projects', {
+  res.render('pages/projects', {
   });
 });
 
 app.get('/aboutme', async (req, res) => {
-    res.render('pages/about-me', {
+  res.render('pages/about-me', {
   });
 });
 
