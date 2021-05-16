@@ -1,0 +1,47 @@
+$colors: (
+  primary: (
+    high:     hsla(226, 87%, 56%, 1),
+    medium:   hsla(226, 87%, 56%, 0.8),
+    low:      hsla(226, 87%, 56%, 0.4),
+    lowest:   hsla(226, 87%, 56%, 0.2),
+  ),
+  warning: (
+    high:     hsla(45, 96%, 65%, 1),
+    medium:   hsla(45, 96%, 65%, 0.8),
+    low:      hsla(45, 96%, 65%, 0.4),
+    lowest:   hsla(45, 96%, 65%, 0.2),
+  ),
+  danger: (
+    high:     hsla(357, 89%, 65%, 1),
+    medium:   hsla(357, 89%, 65%, 0.8),
+    low:      hsla(357, 89%, 65%, 0.4),
+    lowest:   hsla(357, 89%, 65%, 0.2),
+  ),
+  dark: (
+    high:     hsla(246, 33%, 11%, 1),
+    medium:   hsla(246, 33%, 11%, 0.8),
+    low:      hsla(246, 33%, 11%, 0.4),
+    lowest:   hsla(246, 33%, 11%, 0.2),
+  ),
+  medium: (
+    high:     hsla(229, 15%, 22%, 1),
+    medium:   hsla(229, 15%, 22%, 0.8),
+    low:      hsla(229, 15%, 22%, 0.4),
+    lowest:   hsla(229, 15%, 22%, 0.2),
+  ),
+  light: (
+    high:     hsla(246, 33%, 94%, 1),
+    medium:   hsla(246, 33%, 94%, 0.8),
+    low:      hsla(246, 33%, 94%, 0.4),
+    lowest:   hsla(246, 33%, 94%, 0.2),
+  ),
+);
+
+//root css custom props
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --has-color-#{$color}-#{$shade}: #{$value};
+    }
+  }
+}
