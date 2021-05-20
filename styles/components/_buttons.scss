@@ -1,0 +1,53 @@
+.button-small {
+  background-color: var(--has-color-primary-high);
+  color: white;
+  font-weight: var(--font-weight-semi-bold);
+  font-size: var(--font-size-4);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1.75rem;
+  margin: 0.5rem 0;
+  box-shadow: 0px 14px 35px rgba(46, 90, 241, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.4s ease-in-out;
+  &:hover  {
+    box-shadow: 0px 14px 45px rgba(46, 90, 241, 0.3);
+  }
+}
+
+.button-medium {
+  background-color: var(--has-color-primary-high);
+  color: white;
+  font-weight: var(--font-weight-semi-bold);
+  font-size: var(--font-size-4);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1.75rem;
+  margin: 0.5rem 0;
+  box-shadow: 0px 14px 35px rgba(46, 90, 241, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.4s ease-in-out;
+  &:hover  {
+    box-shadow: 0px 14px 45px rgba(46, 90, 241, 0.3);
+  }
+}
+
+.button-large {
+  background-color: var(--has-color-primary-high);
+  color: white;
+  font-weight: var(--font-weight-semi-bold);
+  font-size: var(--font-size-4);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1.75rem;
+  margin: 0.5rem 0;
+  box-shadow: 0px 14px 35px rgba(46, 90, 241, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.4s ease-in-out;
+  &:hover  {
+    box-shadow: 0px 14px 45px rgba(46, 90, 241, 0.3);
+  }
+}

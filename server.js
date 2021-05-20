@@ -51,22 +51,7 @@ app.set('view engine', 'hbs');
 
 //PAGES ROUTE
 app.get('/', async (req, res) => {
-  const api = await initApi(req);
-  const home = await api.getSingle('home');
-  console.log(home.data);
-
   res.render('pages/home', {
-    homeData: home.data,
-  });
-});
-
-app.get('/designs', async (req, res) => {
-  res.render('pages/designs', {
-  });
-});
-
-app.get('/projects', async (req, res) => {
-  res.render('pages/projects', {
   });
 });
 

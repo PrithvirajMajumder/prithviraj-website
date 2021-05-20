@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-:root {
-  --font-family: 'Lato', sans-serif;
-}
+$font-soulmaze: "Soulmaze Font";
+$font-rachel: "Rachel Font";
+$font-soulmaze-outline: "Soulmaze Font Outline";
 
 * {
-  font-family: var(--font-family);
+  font-family: $font-rachel;
   color: var(--has-color-dark-high);
 }
 
@@ -20,7 +19,7 @@ $font-sizes: (
   4: 1.653rem,
   5: 1.125rem,
   6: 1rem,
-  7: 0.85rem
+  7: 0.85rem,
 );
 
 $font-weights: (
