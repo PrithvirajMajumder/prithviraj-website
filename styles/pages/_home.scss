@@ -1,3 +1,5 @@
+$topicBoxOpacity: 0.5;
+
 .navigation-container {
   width: 100vw;
   position: absolute;
@@ -20,15 +22,15 @@
 
 #coding-bar {
   height: 20rem;
-  opacity: 0.5;
+  opacity: $topicBoxOpacity;
 }
 
 #design-bar {
   height: 22rem;
-  opacity: 0.5;
+  opacity: $topicBoxOpacity;
 }
 
 #random-bar {
   height:18rem;
-  opacity: 0.5;
+  opacity: $topicBoxOpacity;
 }
