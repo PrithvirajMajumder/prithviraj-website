@@ -52,11 +52,13 @@ app.set('view engine', 'hbs');
 //PAGES ROUTE
 app.get('/', async (req, res) => {
   res.render('pages/home', {
+    templateData: "home",
   });
 });
 
 app.get('/aboutme', async (req, res) => {
   res.render('pages/about-me', {
+    templateData: "aboutme",
   });
 });
 
