@@ -3,8 +3,16 @@ $font-rachel: "Rachel Font";
 $font-soulmaze-outline: "Soulmaze Font Outline";
 
 * {
+  font-family: $font-soulmaze;
+  color: var(--has-color-light-high);
+}
+
+.rachel {
   font-family: $font-rachel;
-  color: var(--has-color-dark-high);
+}
+
+.soulmaze-outline {
+  font-family: $font-soulmaze-outline;
 }
 
 a {
@@ -39,6 +47,17 @@ p,
 a {
   font-weight: 400;
   line-height: 113%;
+}
+
+@each $size, $value in $font-sizes {
+  .is-#{$size} {
+    font-size: $value !important;
+  }
+}
+@each $size, $value in $font-weights {
+  .is-#{$size} {
+    font-weight: $value !important;
+  }
 }
 
 :root {
