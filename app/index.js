@@ -1,9 +1,11 @@
 import Home from "./pages/home";
 import AboutMe from "./pages/about-me";
+import Preloader from "./pages/preloader";
 import each from "lodash/each";
 
 class App {
   constructor() {
+    new Preloader();
     this.createContent();
     this.createPages();
     this.addLinkListeners();
@@ -15,6 +17,8 @@ class App {
   }
 
   createPages = () => {
+    const preloader = new Preloader();
+    preloader.animate();
     this.pages = {
       home: new Home(),
       aboutme: new AboutMe(),
@@ -25,7 +29,7 @@ class App {
     this.page.show();
   }
 
-  async onChange(url) {
+  async onChange({url}) {
     await this.page.hide();
 
     const request = await window.fetch(url);
@@ -46,6 +50,7 @@ class App {
       this.page = this.pages[this.template];
       this.page.create();
       await this.page.show();
+      this.addLinkListeners();
 
       console.log(divContent);
     } else {
@@ -54,14 +59,13 @@ class App {
   }
 
   addLinkListeners() {
-    const links = document.querySelectorAll('a');
-
-    each(links, link => {
-      link.onclick = event => {
+    const links = document.querySelectorAll('.navbar-links');
+    each(links, (link) => {
+      link.addEventListener('click', (event) => {
         event.preventDefault();
         const { href } = link;
-        this.onChange(href)
-      }
+        this.onChange({ url: href })
+      })
     })
   }
 }
