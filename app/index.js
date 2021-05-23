@@ -5,10 +5,21 @@ import each from "lodash/each";
 
 class App {
   constructor() {
-    new Preloader();
+    this.createPreloader();
     this.createContent();
     this.createPages();
     this.addLinkListeners();
+  }
+
+  createPreloader() {
+    this.preloader = new Preloader();
+    this.preloader.once('completed', this.onPreloaded.bind(this));
+  }
+
+  onPreloaded() {
+    console.log("dmsajdhkjshajkdhksa,hd");
+    const homePage = new Home();
+    homePage.onEntryAnimation();
   }
 
   createContent = () => {
@@ -17,8 +28,6 @@ class App {
   }
 
   createPages = () => {
-    const preloader = new Preloader();
-    preloader.animate();
     this.pages = {
       home: new Home(),
       aboutme: new AboutMe(),
@@ -26,7 +35,6 @@ class App {
 
     this.page = this.pages[this.template];
     this.page.create();
-    this.page.show();
   }
 
   async onChange({url}) {

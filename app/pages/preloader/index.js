@@ -1,16 +1,18 @@
+import EventEmitter from "events";
 import GSAP from "gsap";
 
-export default class Preloader {
-  constructor() { }
+export default class Preloader extends EventEmitter {
+  constructor() {
+    super();
+    this.animate();
+  }
 
   async animate() {
-    return new Promise(async (resolve) => {
-      await this.firstText();
-      setTimeout(() => {
-        this.leaveTransition()
-      }, 3000);
-      resolve
-    })
+    await this.firstText();
+    setTimeout(async () => {
+      await this.leaveTransition();
+      this.emit('completed');
+    }, 3000);
   }
 
   async firstText() {
@@ -41,11 +43,11 @@ export default class Preloader {
     let tltransition = GSAP.timeline({ paused: true, ease: "power4.inOut", })
       .set(fillerScreen, { opacity: 1 })
       .set(secondScreen, { opacity: 1 })
-      .fromTo(fillerScreen, 0.8, { scaleY: 0 , }, { scaleY: 1, transformOrigin: 'bottom', },)
+      .fromTo(fillerScreen, 0.8, { scaleY: 0, }, { scaleY: 1, transformOrigin: 'bottom', },)
       .fromTo(secondScreen, 0.8, { scaleY: 0 }, { scaleY: 1, transformOrigin: 'bottom', }, .2)
-      .from(secondText, 1, { y: 500, transformOrigin: 'bottom', }, .4)
+      .from(secondText, 0.8, { y: 500, transformOrigin: 'bottom', }, .4)
       .set(fillerScreen, { scaleY: 0 })
-      .to(secondText, 1, { opacity: 0, transformOrigin: 'bottom', }, 2)
+      .to(secondText, 0.5, { autoAlpha: 0 }, 2)
       .set(preloader, { display: "none" })
 
 
