@@ -45,9 +45,9 @@ export default class Preloader extends EventEmitter {
       .set(secondScreen, { opacity: 1 })
       .fromTo(fillerScreen, 0.8, { scaleY: 0, }, { scaleY: 1, transformOrigin: 'bottom', },)
       .fromTo(secondScreen, 0.8, { scaleY: 0 }, { scaleY: 1, transformOrigin: 'bottom', }, .2)
-      .from(secondText, 0.8, { y: 500, transformOrigin: 'bottom', }, .4)
+      .from(secondText, 0.8, { yPercent: 100, }, .4)
       .set(fillerScreen, { scaleY: 0 })
-      .to(secondText, 0.5, { autoAlpha: 0 }, 2)
+      .to(secondText, 0.6, { yPercent: -100, opacity: 0 }, 2)
       .set(preloader, { display: "none" })
 
 
